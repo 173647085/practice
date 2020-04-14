@@ -1,2 +1,0 @@
-2020-04-14 18:36:20  - INFO - Call record.
-2020-04-14 18:36:20  - INFO - Call record.

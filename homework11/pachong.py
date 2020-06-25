@@ -39,9 +39,9 @@ class ThreadInsert(object):
             data = []
             for line in f:
                 line = re.sub("\s", "", str(line, encoding="utf-8"))
-                line = tuple(line.split(","))
+                line = tuple(line.split("||"))
                 data.append(line)
-        n = 100    # 按每10万行数据为最小单位拆分成嵌套列表
+        n = 100    # 按每100行数据为最小单位拆分成嵌套列表
         result = [data[i:i + n] for i in range(0, len(data), n)]
         print("共获取{}组数据,每组{}个元素.==>> 耗时:{}'s".format(len(result), n, round(time.time() - st, 3)))
         return result
@@ -135,7 +135,7 @@ def parse_one_page(html):
             for i in range(5):
                 list2.append(item[i])
                 if i != 4:
-                    list2.append(',')
+                    list2.append('||')
             list3.append(list2)
     return(list1,list3)
 

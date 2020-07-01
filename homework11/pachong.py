@@ -198,7 +198,6 @@ def main(index):
 
 
 if __name__ == "__main__":
-    # connect()
     p = ThreadPool(10)
     for i in range(1,39):
         p.apply_async(main,(i,))
